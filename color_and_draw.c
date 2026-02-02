@@ -6,7 +6,7 @@
 /*   By: sakdil <sakdil@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 12:44:25 by sakdil            #+#    #+#             */
-/*   Updated: 2026/02/02 15:01:42 by sakdil           ###   ########.fr       */
+/*   Updated: 2026/02/02 15:25:36 by sakdil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,18 @@ void	draw_vertical_line(t_game *game, int x)
 	else
 		wall_color = 0xFF0000; // Açık Kırmızı
 	while (y < game->ray.draw_start)
-		pixel_put(game, x, y++, ceiling_color);
+	{
+		pixel_put(game, x, y, ceiling_color);
+		y++;
+	}
 	while (y < game->ray.draw_end)
-		pixel_put(game, x, y++, wall_color);
+	{
+		pixel_put(game, x, y, wall_color);
+		y++;
+	}
 	while (y < game->win_y)
-		pixel_put(game, x, y++, floor_color);
+	{
+		pixel_put(game, x, y, floor_color);
+		y++;
+	}
 }
