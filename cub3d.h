@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sakdil <sakdil@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: segunes <segunes@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 18:01:46 by segunes           #+#    #+#             */
-/*   Updated: 2026/02/02 15:08:50 by sakdil           ###   ########.fr       */
+/*   Updated: 2026/02/03 16:22:16 by segunes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@ typedef struct s_image
 	char	*pixels;        // Piksellerin ham verisi 
 	int		bits_per_pixel; // Renk derinliği
 	int		line_len;      // Bir satırın byte uzunluğu 
-	int		byte_order;    // Byte sıralaması
+	int		byte_order; 	// Byte sıralaması
+	int		width;
+	int		height;
 }	t_image;
 
 typedef struct s_game
@@ -107,8 +109,16 @@ typedef struct s_game
 	int		win_x;
 	int		win_y;
 
+	int key_w;
+    int key_s;
+    int key_a;
+    int key_d;
+    int key_left;
+    int key_right;
+
 	t_control	control;
 	t_ray		ray;
+	t_image		textures[4];
 	t_image		image;
 	
 }	t_game;
@@ -146,6 +156,8 @@ int		is_map_char(char c);
 void	game_start(t_game *game);
 int		create_color(int r, int g, int b);
 //void	draw_pixel_to_image(int x, int y, int color, t_game *game); //YAZILACAK
+void load_textures(t_game *game);
+
 
 void	draw_vertical_line(t_game *game, int x);
 int	raycasting(t_game *game);

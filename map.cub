@@ -1,17 +1,10 @@
-   WE                            textures/1.xpm
-NO      textures/2.xpm
-
-
-
+WE  textures/1.xpm
+NO  textures/2.xpm
 SO textures/3.xpm
-
-F 17,   38,                                64
-
 EA textures/4.xpm
 
-
-
-C 218,                   234,235
+F 30,30,35
+C 15,15,15
 
 1111111111111111111111111
 10S0110000100000000000001
